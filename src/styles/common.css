@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:12px;
+  color:#333333;
+}
+a{font-family: 'Pretendard', sans-serif;
+  color:#333333;
+  text-decoration:none;
+}
+
+/*
+  글자크기
+  16px = 1em = 1rem = 100%
+*/
+
+/* 헤더영역 */
+header{
+  background-color: #333333;
+  position: relative;
+}
+header h1{
+  text-align: center;
+}
+.logo{
+  width: 56px;
+  margin: 5px auto;
+}
+button{
+  background:none;
+  border:none;
+}
+.toggle{
+  position: absolute;
+  cursor: pointer;
+  top: 22px;
+  left: 20px;
+  width: 25px;
+}
+.cart{
+  position: absolute;
+  cursor: pointer;
+  top: 22px;
+  right: 20px;
+  width: 25px;
+}
+.toggle img, .cart img{
+  width: 25px;
+}
+
+.navi{
+  background-color: #252323;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: -100%;
+  z-index: 100001;
+  transition: 0.3s;
+}
+.close_btn{
+  position: absolute;
+  top: 20px;
+  left: 5%;
+}
+
+.gnb{
+  width: 90%;
+  margin: 80px auto 0px auto;
+}
+.gnb>li{
+  border-bottom: 1px solid #fff;
+  line-height: 44px;
+  text-indent: 10px;
+}
+.gnb > li>a{
+  color: #ffffff;
+  display: block;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.gnb> li> a:hover{
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.form_navi{
+  width: 90%;
+  margin: 30px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form_navi>li{
+  width: 49%;
+  line-height: 40px;
+  display: inline-block;
+  background-color: rgb(227, 227, 227);
+  margin: 1px 0.20%;
+  text-align: center;
+}
+.form_navi li a{
+  font-size: 0.92rem;
+  color: #333333;
+}
+.user-info{
+  color: #333;
+  margin-left: 20px;
+}
+
+.logout{
+  background-color: rgb(227, 227, 227);
+  border:none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.login-btn {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* 푸터 영역 */
+
+footer{
+  background-color: #494949;
+}
+footer h2{
+  width: 100%;
+  color: #fff;
+  background-color: #717171;
+  font-size: 16px;
+  font-weight:bold;
+  line-height: 40px;
+  text-indent: 30px;
+}
+.f_notice{
+  display: flex;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 12px;
+  text-indent: 30px;
+}
+.f_notice>li>a{
+  color: #fff;
+}
+.f_notice>li:first-child>a{
+  color: #f00;
+  background-color: #fff;
+  padding: 5px 5px;
+}
+.f_notice>li:last-child img{
+  border-radius: 25px;
+  transform: translate(220px,8px);
+  width: 35px;
+}
+
+.border{
+  width: 90%;
+  margin: .1rem auto 0;
+  border-top: 1px solid #333;
+  padding-top: .8rem;
+  position: relative;
+}
+.f_info{
+  text-indent: 30px;
+  line-height: 30px;
+  color: #a6a6a6;
+  font-size: 14px;
+}
+.f_info>li:nth-child(2){
+  color: #fff;
+  font-weight: bold;
+}
+
+.f_company{
+  width: 90%;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 10px;
+}
+.f_bottom{
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+}
+.f_bottom>li>img{
+  width: 120px;
+}
+
