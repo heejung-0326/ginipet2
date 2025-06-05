@@ -38,7 +38,7 @@ function Join(props) {
 
     //서버측에 post방식으로 데이터값을 전달한다.
     try{
-      await axios.post('http://localhost:9070/register', {
+      await axios.post('https://port-0-backend-mbeeoks1e1ce5c07.sel4.cloudtype.app/register', {
         username:form.username,
         password:form.password,
         tel:form.tel,
