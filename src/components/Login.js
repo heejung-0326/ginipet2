@@ -30,7 +30,7 @@ function Login(props) {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('username', form.username); //사용자 아이디 저장
       alert('로그인성공');
-      navigate('/ginipet');
+      navigate('/');
     }catch{
       setError('로그인실패 : 아이디 또는 비밀번호를 확인하세요.');
     }
