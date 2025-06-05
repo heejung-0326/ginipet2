@@ -38,7 +38,7 @@ function Join(props) {
 
     //서버측에 post방식으로 데이터값을 전달한다.
     try{
-      await axios.post('https://port-0-backend-mbeeoks1e1ce5c07.sel4.cloudtype.app/join', {
+      await axios.post('http://localhost:9070/register', {
         username:form.username,
         password:form.password,
         tel:form.tel,
@@ -52,7 +52,7 @@ function Join(props) {
         tel:'',
         email:''
       });
-      navigate('/');
+      navigate('/ginipet');
     }catch(error){ //전송실패시 에러 출력
       setError('회원가입실패 : 아이디가 이미 존재하거나 서버 오류입니다.');
     }
@@ -63,39 +63,41 @@ function Join(props) {
   return (
     <section>
       <h2>회원가입</h2>
-      <form onSubmit={handleSubmit}>
-        <p>
+      <form className='form' onSubmit={handleSubmit}>
+        <p className='title'>
           <label htmlFor='username'>아이디 : </label>
           <input type='text' id='username' name='username' placeholder='아이디입력' onChange={handleChange} value={form.username} required />
         </p>
-        <p>
+        <p className='title'>
           <label htmlFor='password'>패스워드 : </label>
           <input type='password' id='password' name='password' placeholder='패스워드 입력' onChange={handleChange} value={form.password} required />
         </p>
-        <p>
+        <p className='title'>
           <label htmlFor='password2'>패스워드 확인 : </label>
           <input type='password' id='password2' name='password2' placeholder='패스워드 확인' onChange={handleChange} value={form.password2} required />
         </p>
-        <p>
+        <p className='title'>
           <label htmlFor='email'>이메일 : </label>
           <input type='email' id='email' name='email' placeholder='id@domain co.kr or com' onChange={handleChange} value={form.email} required />
         </p>
-        <p>
+        <p className='title'>
           <label htmlFor='tel'>전화번호 : </label>
           <input type='text' id='tel' name='tel'placeholder='010-0000-0000' onChange={handleChange} value={form.tel} required />
         </p>
         <p>
           <input type='checkbox' id='agree' required />
-          <label htmlFor='agree'>이용약관, 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다. </label>
+          <label htmlFor='agree'> 이용약관, 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다. </label>
         </p>
+        <div className='btn-box'>
         <p>
-          <button type='submit'>회원가입 완료</button>
+          <button type='submit' className='join-btn'>회원가입 완료</button>
         </p>
         {/* 회원가입 실패시 나오는 문구 */}
         {error&&<p style={{color:'red'}}>{error}</p>}
 
         {/* 회원가입 성공시 나오는 문구 */}
         {success&&<p style={{color:'green'}}>{success}</p>}
+        </div>
       </form>
     </section>
   );

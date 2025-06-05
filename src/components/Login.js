@@ -24,13 +24,13 @@ function Login(props) {
     e.preventDefault();
 
     try{ //입력이 성공하면 
-      const res = await axios.post('https://port-0-backend-mbeeoks1e1ce5c07.sel4.cloudtype.app/login', form);
+      const res = await axios.post('http://localhost:9070/login', form);
 
       //사용자 인증이 끝나면 '토큰'을 생성
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('username', form.username); //사용자 아이디 저장
       alert('로그인성공');
-      navigate('/');
+      navigate('/ginipet');
     }catch{
       setError('로그인실패 : 아이디 또는 비밀번호를 확인하세요.');
     }
@@ -40,7 +40,7 @@ function Login(props) {
     <section>
       <h2>로그인</h2>
       <form className="form" onSubmit={handleSubmit}>
-        <p>
+        <p className='title'>
           <label htmlFor='username'>아이디</label>
           <input type='text'
           id='username' 
@@ -51,7 +51,7 @@ function Login(props) {
           onChange={handleChange}
           />
         </p>
-        <p>
+        <p className='title'>
           <label htmlFor='password'>패스워드</label>
           <input type='password'
           id='password'
@@ -62,8 +62,9 @@ function Login(props) {
           onChange={handleChange}
           />
         </p>
+        <div className='btn-box'>
         <p>
-          <input type='submit' value='로그인'/>
+          <input type='submit' value='로그인' className='login-btn'/>
         </p>
         {error&&<p style={{color:'red'}}>{error}</p>}
 
@@ -71,8 +72,8 @@ function Login(props) {
           <Link to='/id_search'>아이디찾기</Link>&#10072;
           <Link to='/pw_search'>비번찾기</Link>&#10072;
           <Link to='/join'>회원가입</Link>
-
         </p>
+        </div>
       </form>
     </section>
   );
