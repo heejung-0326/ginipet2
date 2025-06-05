@@ -155,3 +155,27 @@ p>img{
 
 /* 로그인 서식 */
 
+.form{
+  width: 450px;
+  margin: 0 auto;
+}
+
+.title{text-align: left; font-size: 16px; font-weight: bold; margin:20px 0px;}
+.title input{padding: 10px; width: 100%; margin: 10px 0px;}
+
+section h2{text-align: center; margin:20px 0px; font-size: 24px; font-weight: bold;}
+
+.btn-box p{ text-align: center;}
+.login-btn,.join-btn{
+  border: none; 
+  background-color: rgb(193, 51, 51); 
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 30px;
+  text-align: center;
+  margin: 20px 0px;
+}
+.btn-group{margin-bottom: 20px;}
+.btn-group a{margin: 0px 10px; font-size: 16px;}
+
+/* 회원가입 서식 */
