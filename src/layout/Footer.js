@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 function Footer(props) {
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <footer>
       <h2>공지사항</h2>
@@ -21,12 +22,16 @@ function Footer(props) {
       <div className='border'></div>
 
       <div className='f_company'>
-        <h3>지니펫 사업자 정보 확인&nbsp;
+        <h3
+        style={{cursor:'pointer'}}
+        onClick={()=> setShowInfo(prev => !prev)}
+        >
+          지니펫 사업자 정보 확인&nbsp;
           <img src={`${process.env.PUBLIC_URL}/images/iconArrow_bottom.png`} alt='지니펫 로고' />
         </h3>
       </div>
 
-      <div>
+      <div style={{ display: showInfo ? 'block' : 'none', transition:'0.3s'}}>
         <ul className='f_bottom'>
           <li><img src={`${process.env.PUBLIC_URL}/images/ci_grey_kgclifengin.png`} alt='사업자이미지' /></li>
           <li>경기도 과천시 과천대로 7길 65, 과천상상자이타워 A-105~108(1층)</li>
