@@ -38,7 +38,7 @@ function Join(props) {
 
     //서버측에 post방식으로 데이터값을 전달한다.
     try{
-      await axios.post('https://port-0-backend-mbeeoks1e1ce5c07.sel4.cloudtype.app/register', {
+      await axios.post('https://port-0-backend-mbeeoks1e1ce5c07.sel4.cloudtype.app/join', {
         username:form.username,
         password:form.password,
         tel:form.tel,
@@ -52,7 +52,7 @@ function Join(props) {
         tel:'',
         email:''
       });
-      navigate('/ginipet');
+      navigate('/');
     }catch(error){ //전송실패시 에러 출력
       setError('회원가입실패 : 아이디가 이미 존재하거나 서버 오류입니다.');
     }
