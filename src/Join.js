@@ -38,19 +38,19 @@ function Join(props) {
 
     //서버측에 post방식으로 데이터값을 전달한다.
     try{
-      await axios.post('https://port-0-backend-mbeeoks1e1ce5c07.sel4.cloudtype.app/join', {
+      await axios.post('http://localhost:9070/register', {
         username:form.username,
         password:form.password,
-        tel:form.tel,
-        email:form.email
+        email:form.email,
+        tel:form.tel        
       });
       setSuccess('회원가입이 완료 되었습니다.');
       setForm({ //폼양식에 데이터를 모두 초기화(비워준다.)
         username:'',
         password:'',
         password2:'',
-        tel:'',
-        email:''
+        email:'',
+        tel:''
       });
       navigate('/ginipet');
     }catch(error){ //전송실패시 에러 출력
